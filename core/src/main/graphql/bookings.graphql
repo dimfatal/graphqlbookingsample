@@ -1,0 +1,12 @@
+query {
+    bookings(homeId: "3b417fca-68f1-43bc-9168-5be7e0e11196") {
+        id
+        homeId
+        fromDate
+        toDate
+        guestEmail
+        source
+        createdAt
+    }
+},
+

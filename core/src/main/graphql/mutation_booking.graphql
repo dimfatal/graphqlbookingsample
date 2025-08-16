@@ -1,0 +1,8 @@
+mutation {
+    createBooking(
+        homeId: "4b417fca-68f1-43bc-9168-5be7e0e11196",
+        fromDate: "2025-03-25",
+        toDate: "2025-03-30",
+        guestEmail: "my_bussyome@mail.com",
+        source: "Any" )
+}

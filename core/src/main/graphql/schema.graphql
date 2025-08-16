@@ -1,0 +1,27 @@
+schema {
+    query: Query
+}
+
+type Query {
+    bookings(homeId: ID!): [Booking!]!
+}
+
+type Booking {
+    id: String!
+    homeId: String!
+    fromDate: String! # Format: YYYY-MM-DD
+    toDate: String! # Format: YYYY-MM-DD
+    guestEmail: String!
+    source: String!
+    createdAt: String!
+}
+
+type Mutation {
+    createBooking(
+        homeId: String!
+        fromDate: String!
+        toDate: String!
+        guestEmail: String!
+        source: String!
+    ): ID! # Booking ID
+}

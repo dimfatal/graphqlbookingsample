@@ -1,0 +1,9 @@
+schema: schema.graphql
+documents: '**/*.graphql'
+extensions:
+  endpoints:
+    default:
+      url: 'http://localhost:8090/api/graphql'
+      headers:
+        X-Token: 'mytoken'
+      introspect: true

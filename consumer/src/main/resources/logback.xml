@@ -1,0 +1,34 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n</pattern>
+        </encoder>
+        <!-- Optional: ignore DEBUG/TRACE globally for this appender -->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+    </appender>
+
+    <!-- Keep your code visible -->
+    <logger name="com.booking.consumer" level="INFO"/>
+
+    <!-- Quiet down fs2-kafka internals -->
+    <logger name="fs2.kafka" level="WARN"/>
+
+    <!-- Quiet down Kafka client noise -->
+    <logger name="org.apache.kafka" level="WARN"/>
+    <logger name="org.apache.kafka.clients" level="WARN"/>
+    <logger name="org.apache.kafka.clients.consumer" level="WARN"/>
+    <logger name="org.apache.kafka.clients.producer" level="WARN"/>
+    <logger name="org.apache.kafka.common.metrics" level="ERROR"/>
+    <logger name="org.apache.kafka.clients.NetworkClient" level="ERROR"/>
+    <logger name="org.apache.kafka.clients.consumer.internals" level="ERROR"/>
+    <logger name="org.apache.kafka.clients.FetchSessionHandler" level="ERROR"/>
+    <logger name="org.apache.kafka.common.utils.AppInfoParser" level="ERROR"/>
+    <logger name="kafka.coordinator.group" level="WARN"/>
+
+    <!-- Sensible root default -->
+    <root level="WARN">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
